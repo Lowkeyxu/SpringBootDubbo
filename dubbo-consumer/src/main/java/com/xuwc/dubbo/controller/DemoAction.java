@@ -6,9 +6,13 @@
 package com.xuwc.dubbo.controller;
 
 import com.xuwc.dubbo.service.DemoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,9 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0
  * @since 2017/12/8
  */
-@RestController
-@RequestMapping("/test")
+@Controller
+@RequestMapping("test")
+@EnableAutoConfiguration
 public class DemoAction {
+
+    private Logger logger = LoggerFactory.getLogger(DemoAction.class);
 
     //demoService
     @Autowired
@@ -29,9 +36,8 @@ public class DemoAction {
      */
     @RequestMapping("index")
     public String index(){
-        return demoService.sayHello("admin");
+        logger.info("================================test=========================");
+        //return demoService.sayHello("admin");
+        return "frame";
     }
-
-
-
 }

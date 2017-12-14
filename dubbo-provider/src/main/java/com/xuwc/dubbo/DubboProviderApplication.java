@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ImportResource;
 
 @ImportResource("classpath:dubbox-provider.xml")
 @SpringBootApplication
-@MapperScan(basePackages = {"com.xuwc.dubbo.service"}, sqlSessionFactoryRef = "sqlSessionFactory")
 public class DubboProviderApplication extends SpringBootServletInitializer {
 
 	@Override
