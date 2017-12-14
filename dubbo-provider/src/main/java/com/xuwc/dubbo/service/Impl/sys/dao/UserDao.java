@@ -6,14 +6,14 @@
 package com.xuwc.dubbo.service.Impl.sys.dao;
 
 import com.xuwc.dubbo.models.logic.sys.UserVo;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
 /** 用户Dao
  * @author xuwc
  * @version 1.0
  * @since 2017/12/7
  */
-@Repository
+@Mapper
 public interface UserDao {
     //获取用户信息
     UserVo getUser(String loginName);

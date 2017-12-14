@@ -131,4 +131,10 @@ public class UserVo extends BaseEntity {
     public void setUpdMark(String updMark) {
         this.updMark = updMark;
     }
+
+    @Override
+    public String toString() {
+        return "[id="+id+"loginName="+loginName+"userName="+userName+"sex="+sex+"photoImage="+photoImage
+                +"password="+password+"]";
+    }
 }
