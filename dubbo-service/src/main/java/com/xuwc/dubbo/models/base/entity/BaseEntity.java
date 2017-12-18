@@ -3,7 +3,7 @@
  * 
  * Copyright (c) 2016, SIMPO Technology. All Rights Reserved. SIMPO Technology. CONFIDENTIAL
  */
-package com.xuwc.dubbo.common.base.entity;
+package com.xuwc.dubbo.models.base.entity;
 
 import java.io.Serializable;
 

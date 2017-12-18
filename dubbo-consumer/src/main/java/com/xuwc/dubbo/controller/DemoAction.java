@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Controller
 @RequestMapping("test")
-@EnableAutoConfiguration
 public class DemoAction {
 
     private Logger logger = LoggerFactory.getLogger(DemoAction.class);
@@ -35,9 +34,16 @@ public class DemoAction {
      * 测试数据
      */
     @RequestMapping("index")
+    @ResponseBody
     public String index(){
-        logger.info("================================test=========================");
-        //return demoService.sayHello("admin");
+        return demoService.sayHello("admin");
+    }
+
+    /**
+     * 测试数据
+     */
+    @RequestMapping("frame")
+    public String frame(){
         return "frame";
     }
 }

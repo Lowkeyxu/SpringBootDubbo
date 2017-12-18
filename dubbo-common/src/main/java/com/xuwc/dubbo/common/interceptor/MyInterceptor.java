@@ -32,7 +32,7 @@ public class MyInterceptor implements HandlerInterceptor {
         String ip = WebUtils.getIpAddr(httpServletRequest);
         HandlerMethod handlerMethod = (HandlerMethod) o;
         Method method = handlerMethod.getMethod();
-        logger.info("用户:"+ip+",访问目标:"+method.getDeclaringClass().getName() + "." + method.getName());
+        logger.info(">>>>>>>>>>>用户:"+ip+",访问目标:"+method.getDeclaringClass().getName() + "." + method.getName()+"<<<<<<<<<<<<<");
         String ctx = httpServletRequest.getScheme() + "://"+httpServletRequest.getServerName()+":"+httpServletRequest.getServerPort()+httpServletRequest.getContextPath();
         httpServletRequest.setAttribute("ctx", ctx);
         return true;//返回true 才会继续往下执行

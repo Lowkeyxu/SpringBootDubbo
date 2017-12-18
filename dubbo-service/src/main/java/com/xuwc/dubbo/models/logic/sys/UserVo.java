@@ -6,7 +6,7 @@
 package com.xuwc.dubbo.models.logic.sys;
 
 
-import com.xuwc.dubbo.common.base.entity.BaseEntity;
+import com.xuwc.dubbo.models.base.entity.BaseEntity;
 
 /** 用户vo
  * @author xuwc
