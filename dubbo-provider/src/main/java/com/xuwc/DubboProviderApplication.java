@@ -14,9 +14,9 @@ public class DubboProviderApplication{
 	private static volatile boolean running = true;
 
 	public static void main(String[] args) {
-		System.out.println("=======================服务启动中====================");
+		System.out.println("=======================提供者服务启动中====================");
 		SpringApplication.run(DubboProviderApplication.class, args);
-		System.out.println("=======================服务启动完成====================");
+		System.out.println("=======================提供者服务启动完成====================");
 		synchronized (DubboProviderApplication.class) {
 			while (running) {
 				try {

@@ -3,19 +3,16 @@
  * 
  * Copyright (c) 2016, SIMPO Technology. All Rights Reserved. SIMPO Technology. CONFIDENTIAL
  */
-package com.xuwc.dubbo.common.interceptor;
+package com.xuwc.dubbo.common.config;
 
+import com.xuwc.dubbo.common.interceptor.MyInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 
-/**
+/** webMVC配置
  * @author xuwc
  * @version 1.0
  * @since 2017/9/8

@@ -18,11 +18,11 @@
 	</parent>
 
 	<dependencies>
-		<dependency>
+		<!--<dependency>
 			<groupId>com.xuwc</groupId>
 			<artifactId>dubbo-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.xuwc</groupId>
 			<artifactId>dubbo-service</artifactId>
@@ -39,6 +39,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.43</version>
 			<scope>runtime</scope>
 		</dependency>
 
@@ -51,7 +52,7 @@
 	</dependencies>
 
 	<build>
-		<resources>
+		<!--<resources>
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>
@@ -65,11 +66,43 @@
 					<include>**/*</include>
 				</includes>
 			</resource>
-		</resources>
+		</resources>-->
 		<plugins>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>-->
+			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib</classpathPrefix>
+							<mainClass>com.xuwc.DubboProviderApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- dependency插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
