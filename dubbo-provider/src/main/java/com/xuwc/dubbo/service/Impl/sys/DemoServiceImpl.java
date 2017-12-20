@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version 1.0
  * @since 2017/12/8
  */
-@Service
+@Service(group = "dubbo")
 public class DemoServiceImpl implements DemoService {
     //用户dao
     @Autowired

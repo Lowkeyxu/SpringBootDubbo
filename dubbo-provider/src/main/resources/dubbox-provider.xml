@@ -11,15 +11,18 @@
     <dubbo:application name="dubbo-provider" owner="dubbo-provider" />
 
     <!-- 定义 zookeeper 注册中心地址及协议 -->
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" client="zkclient" />
+    <dubbo:registry protocol="zookeeper" address="192.168.57.1:2181" client="zkclient" />
 
     <!-- 定义 Dubbo 协议名称及使用的端口，dubbo 协议缺省端口为 20880，如果配置为 -1 或者没有配置 port，则会分配一个没有被占用的端口 -->
     <dubbo:protocol name="dubbo" port="-1" />
 
+    <!--provider中 reference类的定义，需要优先扫描，定义-->
+    <dubbo:annotation package="com.xuwc.dubbo.service"/>
+
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.xuwc.dubbo.service.DemoService" ref="demoService" timeout="10000" />
+    <!--<dubbo:service interface="com.xuwc.dubbo.service.DemoService" ref="demoService" timeout="10000" />-->
 
     <!-- 和本地 bean 一样实现服务 -->
-    <bean id="demoService" class="com.xuwc.dubbo.service.Impl.sys.DemoServiceImpl" />
+    <!--<bean id="demoService" class="com.xuwc.dubbo.service.Impl.sys.DemoServiceImpl" />-->
 
 </beans>

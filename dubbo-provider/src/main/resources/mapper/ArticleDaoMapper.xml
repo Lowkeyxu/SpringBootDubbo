@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuwc.dubbo.service.Impl.sys.dao.ArticleDao">
+
+  <sql id="columnList" >
+    id, userId, title,content,delFlag, addTime,addUserId,addMark, updTime, updUserId,updMark
+  </sql>
+
+   <!-- 查询用户信息 -->
+  <select id="getArticleInfo" resultType="com.xuwc.dubbo.models.logic.sys.ArticleVo" parameterType="java.lang.String">
+      SELECT
+      <include refid="columnList" />
+      FROM sys_article
+      WHERE id = #{id}
+  </select>
+
+</mapper>
